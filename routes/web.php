@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\AdminPostController;
+use App\Http\Controllers\Controller;
 
 Route::get('/', function () {
     return view('dashboard');
@@ -23,3 +24,5 @@ Route::post('/admin/posts', [AdminPostController::class, 'store'])->name('admin.
 
 Route::get('/admin/posts', [AdminPostController::class, 'index'])->name('admin.posts.index');
 Route::get('/admin/posts/{post}', [AdminPostController::class, 'show'])->name('admin.posts.show');
+
+Route::get('/site/about', [Controller::class, 'index'])->name('site.about.index');
